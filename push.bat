@@ -1,7 +1,9 @@
 @echo off
-echo Uploading new code to GitHub...
+echo Syncing with GitHub...
+git pull origin main
+echo Uploading new code...
 git add .
 git commit -m "Added a new problem solution"
-git push
+git push origin main
 echo Successfully uploaded!
 pause
