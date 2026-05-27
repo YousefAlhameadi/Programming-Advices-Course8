@@ -10,7 +10,7 @@ As I work through this curriculum, I am using these algorithmic challenges to co
 * **Core Focus:** Algorithmic Logic, Data Structures, and Modular Programming.
 
 ## 🚀 Key Highlights & Progress
-**Current Status:** Completed Problems 1 - 12.
+**Current Status:** Completed Problems 1 - 14.
 
 * **Modular Date Operations:** Built robust, single-purpose functions to validate leap years and accurately calculate the number of days in any given month using array-based checks.
 * **Terminal Calendar Generator:** Engineered a fully formatted, terminal-based calendar capable of printing specific months or entire years using `<iomanip>`.
