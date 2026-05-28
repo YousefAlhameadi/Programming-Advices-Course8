@@ -10,11 +10,13 @@ As I work through this curriculum, I am using these algorithmic challenges to co
 * **Core Focus:** Algorithmic Logic, Data Structures, and Modular Programming.
 
 ## 🚀 Key Highlights & Progress
-**Current Status:** Completed Problems 1 - 14.
+**Current Status:** Completed Problems 1 - 32.
 
-* **Modular Date Operations:** Built robust, single-purpose functions to validate leap years and accurately calculate the number of days in any given month using array-based checks.
-* **Terminal Calendar Generator:** Engineered a fully formatted, terminal-based calendar capable of printing specific months or entire years using `<iomanip>`.
-* **Forward & Reverse Date Derivation:** Developed logic to calculate the total number of days from the start of a year, and reverse-engineered that calculation to convert an aggregate number of days back into a precise calendar date using decrementing loops.
+* **Modular Date Operations:** Built robust, single-purpose functions to validate leap years, determine month capacities, and generate fully formatted, terminal-based calendars.
+* **Time & Date Engine (Core Logic):** Engineered composite data structure comparisons to validate exact structural equality, chronological sequence (Before/After), and end-of-cycle boundary detection (End of Month / End of Year).
+* **Directional Time Deltas:** Developed difference algorithms to calculate absolute and relative date offsets. This includes supporting negative time vectors to distinguish between past (overdue) and future (upcoming) events.
+* **Macro & Micro Date Mutations:** Built foundational increment logic to safely step dates forward. By relying on thoroughly tested boundary limits, this logic scales seamlessly from adding a single day to shifting dates by decades, centuries, and millenniums.
+* **Precision Math & Edge Cases:** Refined the underlying algorithms to adjust for overcounted days during complex aggregate additions, ensuring strict accuracy across all state rollovers.
 
 ## 📂 Repository Structure
 All solutions are contained within individual `.cpp` files. Each file is named clearly by its corresponding problem number to maintain a clean and easily navigable workspace.
