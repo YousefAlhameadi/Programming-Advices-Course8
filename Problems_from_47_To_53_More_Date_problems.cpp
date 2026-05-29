@@ -42,11 +42,7 @@ short IndexOfDay(short year, short month, short day)
 
 short IndexOfDay(stDate Date)
 {
-    short a = ((14 - Date.Month) / 12);
-    short y = Date.Year - a;
-    short m = Date.Month + (12 * a) - 2;
-
-    return (Date.Day + y + (y / 4) - (y / 100) + (y / 400) + ((31 * m) / 12)) % 7;
+    return IndexOfDay(Date.Year, Date.Month, Date.Day);
 
 }
 
@@ -184,15 +180,28 @@ short HowManyDaysUntilTheEndofWeek(stDate TodaysDate)
     return (7 - (IndexOfDay(TodaysDate) + 1));
 }
 
-short HowManyDaysUntilEndOfMonth(stDate EndOfMonthDate , stDate TodaysDate)
+short HowManyDaysUntilEndOfMonth(stDate TodaysDate)
 {
-    
-    return Diff_Between_Two_Dates(TodaysDate, EndOfMonthDate,true);
+    stDate LastDayOfMonth;
+
+    LastDayOfMonth.Day = CheckMonths(TodaysDate.Month, TodaysDate.Year);
+    LastDayOfMonth.Month = TodaysDate.Month;
+    LastDayOfMonth.Year = TodaysDate.Year;
+
+
+    return Diff_Between_Two_Dates(TodaysDate, LastDayOfMonth,true);
 }
 
-short HowManyDaysUntilEndOfYear(stDate EndOfYearDate, stDate TodaysDate)
+short HowManyDaysUntilEndOfYear(stDate TodaysDate)
 {
-    return Diff_Between_Two_Dates(TodaysDate, EndOfYearDate);
+    stDate LastDayOfYear;
+
+    LastDayOfYear.Day = 31;
+    LastDayOfYear.Month = 12;
+    LastDayOfYear.Year = TodaysDate.Year;
+
+
+    return Diff_Between_Two_Dates(TodaysDate, LastDayOfYear);
 }
 
 
@@ -256,24 +265,11 @@ int main()
         cout << "no it is not" << endl;
     }
 
+    cout << "Days Until the end of the week : " << HowManyDaysUntilTheEndofWeek(TodaysDate) << endl;
 
-    stDate LastDayOfMonth;
-    stDate LastDayOfYear;
-    short HowManyDaysUntilEndOfWeek = HowManyDaysUntilTheEndofWeek(TodaysDate);
+    cout << "Days Until the end of the Month : " << HowManyDaysUntilEndOfMonth(TodaysDate) << endl;
 
-    LastDayOfMonth.Day = CheckMonths(TodaysDate.Month, TodaysDate.Year);
-    LastDayOfMonth.Month = TodaysDate.Month;
-    LastDayOfMonth.Year = TodaysDate.Year;
-
-    LastDayOfYear.Day = 31;
-    LastDayOfYear.Month = 12;
-    LastDayOfYear.Year = TodaysDate.Year;
-
-    cout << "Days Until the end of the week : " << HowManyDaysUntilEndOfWeek << endl;
-
-    cout << "Days Until the end of the Month : " << HowManyDaysUntilEndOfMonth(LastDayOfMonth , TodaysDate) << endl;
-
-    cout << "Days Until the end of the year : " << HowManyDaysUntilEndOfYear(LastDayOfYear, TodaysDate) << endl;
+    cout << "Days Until the end of the year : " << HowManyDaysUntilEndOfYear(TodaysDate) << endl;
 
     
 
